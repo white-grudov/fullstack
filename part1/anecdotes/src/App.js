@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 const Anecdote = ({ text, votes }) => {
   return (
@@ -6,19 +6,19 @@ const Anecdote = ({ text, votes }) => {
       <p>{text}</p>
       <p>Votes: {votes}</p>
     </div>
-  );
-};
+  )
+}
 
 const Button = ({ text, onClick }) => {
-  return <button onClick={onClick}>{text}</button>;
-};
+  return <button onClick={onClick}>{text}</button>
+}
 
 const MostVotedAnecdote = ({ anecdotes, votes }) => {
-  const mostVotedIndex = votes.indexOf(Math.max(...votes));
-  const mostVotedAnecdote = anecdotes[mostVotedIndex];
+  const mostVotedIndex = votes.indexOf(Math.max(...votes))
+  const mostVotedAnecdote = anecdotes[mostVotedIndex]
 
   if (votes[mostVotedIndex] === 0) {
-    return null;
+    return null
   }
 
   return (
@@ -26,8 +26,8 @@ const MostVotedAnecdote = ({ anecdotes, votes }) => {
       <h2>Anecdote with most votes</h2>
       <Anecdote text={mostVotedAnecdote} votes={votes[mostVotedIndex]} />
     </div>
-  );
-};
+  )
+}
 
 const App = () => {
   const anecdotes = [
@@ -39,21 +39,21 @@ const App = () => {
     'Debugging is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.',
     'Programming without an extremely heavy use of console.log is same as if a doctor would refuse to use x-rays or blood tests when diagnosing patients.',
     'The only way to go fast is to go well.'
-  ];
+  ]
 
-  const [selected, setSelected] = useState(0);
-  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0));
+  const [selected, setSelected] = useState(0)
+  const [votes, setVotes] = useState(new Array(anecdotes.length).fill(0))
 
   const randomAnecdote = () => {
-    const randomIndex = Math.floor(Math.random() * anecdotes.length);
-    setSelected(randomIndex);
-  };
+    const randomIndex = Math.floor(Math.random() * anecdotes.length)
+    setSelected(randomIndex)
+  }
 
   const voteAnecdote = () => {
-    const copyVotes = [...votes];
-    copyVotes[selected] += 1;
-    setVotes(copyVotes);
-  };
+    const copyVotes = [...votes]
+    copyVotes[selected] += 1
+    setVotes(copyVotes)
+  }
 
   return (
     <div>
@@ -65,7 +65,7 @@ const App = () => {
       </div>
       <MostVotedAnecdote anecdotes={anecdotes} votes={votes} />
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App
