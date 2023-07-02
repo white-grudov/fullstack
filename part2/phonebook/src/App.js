@@ -65,6 +65,7 @@ const App = () => {
           })
           .catch((error) => {
             showNotification(`Error updating ${personExists.name}'s number: ${error.message}`, 'error')
+            console.log(error.response.data.error)
           })
       }
     } else {
@@ -80,6 +81,7 @@ const App = () => {
         })
         .catch((error) => {
           showNotification(`Error adding ${newPerson.name}: ${error.message}`, 'error')
+          console.log(error.response.data.error)
         })
     }
   }
@@ -96,6 +98,7 @@ const App = () => {
         })
         .catch((error) => {
           showNotification(`Error deleting ${personToDelete.name}: ${error.message}`, 'error')
+          console.log(error.response.data.error)
         })
     }
   }
