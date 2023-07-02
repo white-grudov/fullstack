@@ -1,12 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-import App from './App'
+const rootElement = document.getElementById('root');
 
-const PORT = process.env.PORT || 3001
-App.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`)
-})
+ReactDOM.createRoot(rootElement).render(<App />);
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />)
+const PORT = process.env.PORT || 10000;
+
+console.log(`Server running on port ${PORT}`);
