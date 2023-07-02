@@ -7,6 +7,6 @@ const rootElement = document.getElementById('root');
 
 ReactDOM.createRoot(rootElement).render(<App />);
 
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 3001;
 
 console.log(`Server running on port ${PORT}`);
